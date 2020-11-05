@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UDPFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/textView_display"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_left_to_parent"
+        android:layout_marginTop="@dimen/margin_top_to_parent"
+        android:layout_marginEnd="@dimen/margin_right_to_parent"
+        android:background="@color/link_title_background"
+        android:hint="@string/show_message"
+
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:singleLine="false"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+<!--
+    <TextView
+        android:id="@+id/textView_ip"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/bottom_height"
+        android:layout_marginStart="@dimen/margin_left_to_parent"
+        android:layout_marginTop="@dimen/margin_top_to_parent"
+        android:text="@string/ip_adress"
+        app:layout_constraintBottom_toTopOf="@id/editText_message"
+        app:layout_constraintEnd_toStartOf="@+id/editText_ip"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_display"
+        app:layout_constraintVertical_bias="0.5"
+
+        />
+
+    <EditText
+        android:id="@+id/editText_ip"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/bottom_height"
+        android:ems="4"
+        android:inputType="text"
+        android:text="@string/mock_ip"
+        app:layout_constraintBaseline_toBaselineOf="@id/textView_ip"
+        app:layout_constraintEnd_toStartOf="@+id/textView_port"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_ip"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".5" />
+
+    -->
+
+    <TextView
+        android:id="@+id/textView_port"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="@dimen/margin_left_to_parent"
+        android:layout_marginTop="@dimen/margin_top"
+        android:text="@string/port"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_display"
+
+        />
+
+    <EditText
+        android:id="@+id/editText_port"
+        android:layout_width="70dp"
+        android:layout_height="@dimen/button_height"
+        android:ems="10"
+        android:inputType="number"
+        android:paddingRight="8dp"
+        android:text="@string/mock_port"
+        app:layout_constraintBaseline_toBaselineOf="@id/textView_port"
+        app:layout_constraintStart_toEndOf="@+id/textView_port"
+        android:layout_marginStart="@dimen/margin_left_to_parent"
+
+        />
+
+    <EditText
+        android:id="@+id/editText_message"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_left_to_parent"
+        android:layout_marginEnd="@dimen/margin_right_to_parent"
+
+        android:background="@color/link_title_background"
+        android:ems="10"
+        android:gravity="start"
+        android:hint="@string/send_message"
+        android:inputType="textNoSuggestions"
+        android:minLines="2"
+        app:layout_constraintBottom_toTopOf="@id/button_send"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_port"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/button_send"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="@dimen/margin_left_to_parent"
+        android:layout_marginTop="@dimen/margin_top_to_parent"
+        android:layout_marginEnd="@dimen/margin_right_to_parent"
+        android:layout_marginBottom="@dimen/margin_bottom_to_parent"
+        android:text="Send"
+
+
+        android:textSize="14sp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editText_message" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

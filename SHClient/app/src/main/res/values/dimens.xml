@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_left_to_parent">8dp</dimen>
+    <dimen name="margin_right_to_parent">8dp</dimen>
+    <dimen name="margin_top_to_parent">8dp</dimen>
+    <dimen name="margin_bottom_to_parent">8dp</dimen>
+
+    <dimen name="margin_left">8dp</dimen>
+    <dimen name="margin_right">6dp</dimen>
+    <dimen name="margin_top">24dp</dimen>
+    <dimen name="margin_bottom">16dp</dimen>
+
+    <dimen name="button_height">56dp</dimen>
+
+    <dimen name="ip_length">100dp</dimen>
+    <dimen name="port_length">50dp</dimen>
+
+
+
+</resources>

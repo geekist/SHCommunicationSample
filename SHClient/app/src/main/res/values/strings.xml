@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">SHClient</string>
+    <!--Navigation Bottom button-->
+    <string name="tcp">TCP通信</string>
+    <string name="udp">UDP通信</string>
+    <string name="ble">蓝牙通信</string>
+    <string name="mqtt">MQTT通信</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="show_message">消息显示：</string>
+    <string name="mock_ip">"192.168.124.4"</string>
+    <string name="mock_port">"8900"</string>
+
+    <string name="ip_adress">IP：</string>
+    <string name="port">广播发送端口：</string>
+    <string name="send_message">发送消息：</string>
+
+
+    <string name="server_ip_adress">服务器IP：</string>
+    <string name="server_port">服务器端口：</string>
+
+    <string name="connect_mqtt">连接MQTT</string>
+    <string name="publish_mqtt">发布topic</string>
+    <string name="subscribe_mqtt">订阅topic</string>
+
+</resources>

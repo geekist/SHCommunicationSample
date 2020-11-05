@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TcpFragment">
+
+
+    <TextView
+        android:id="@+id/textView_message"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_left_to_parent"
+        android:layout_marginTop="@dimen/margin_top_to_parent"
+        android:layout_marginBottom="@dimen/margin_bottom"
+
+        android:layout_marginEnd="@dimen/margin_right_to_parent"
+        android:background="@color/link_title_background"
+        android:hint="@string/show_message"
+
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:singleLine="false"
+        app:layout_constraintBottom_toTopOf="@id/button_connect"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintVertical_weight="1" />
+
+
+    <Button
+        android:id="@+id/button_connect"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="@dimen/margin_left_to_parent"
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_marginEnd="@dimen/margin_right"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        android:text="@string/connect_mqtt"
+
+        android:textSize="14sp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toStartOf="@id/button_send"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+    <Button
+        android:id="@+id/button_send"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginEnd="@dimen/margin_right"
+
+        android:text="@string/publish_mqtt"
+
+        android:textSize="14sp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+
+        app:layout_constraintBaseline_toBaselineOf="@id/button_connect"
+        app:layout_constraintEnd_toStartOf="@+id/button_disconnect"
+
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/button_connect"
+
+        />
+
+    <Button
+        android:id="@+id/button_disconnect"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginEnd="@dimen/margin_left_to_parent"
+        android:text="@string/subscribe_mqtt"
+
+        android:textSize="14sp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+
+        app:layout_constraintBaseline_toBaselineOf="@id/button_connect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/button_send" />
+
+    <!--
+
+
+        app:layout_constraintBaseline_toBaselineOf="@id/button_connect"
+        app:layout_constraintStart_toEndOf="@id/button_connect"
+
+      app:layout_constraintEnd_toStartOf="@id/button_disconnect"
+
+            app:layout_constraintStart_toEndOf="@id/button_connect"
+
+            app:layout_constraintStart_toEndOf="@id/button_send"
+
+
+    -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

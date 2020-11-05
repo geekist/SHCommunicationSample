@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_tcp"
+        android:icon="@mipmap/ic_router_black_24dp"
+        android:title="@string/tcp" />
+
+    <item
+        android:id="@+id/navigation_udp"
+        android:icon="@mipmap/ic_cast_black_24dp"
+        android:title="@string/udp" />
+
+    <item
+        android:id="@+id/navigation_ble"
+        android:icon="@mipmap/ic_bluetooth_searching_black_24dp"
+        android:title="@string/ble" />
+
+    <item
+        android:id="@+id/navigation_mqtt"
+        android:icon="@mipmap/ic_wifi_tethering_black_24dp"
+        android:title="@string/mqtt" />
+</menu>
