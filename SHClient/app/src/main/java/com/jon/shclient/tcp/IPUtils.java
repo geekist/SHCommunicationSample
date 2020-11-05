@@ -1,4 +1,4 @@
-package com.jon.shclient.network;
+package com.jon.shclient.tcp;
 import android.content.Context;
 import android.net.DhcpInfo;
 import android.net.wifi.WifiInfo;

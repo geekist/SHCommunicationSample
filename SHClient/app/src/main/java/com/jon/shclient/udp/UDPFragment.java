@@ -1,4 +1,4 @@
-package com.jon.shclient;
+package com.jon.shclient.udp;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,20 +13,20 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.jon.shclient.R;
 import com.jon.shclient.bean.BroadcastData;
-import com.jon.shclient.network.IPUtils;
-import com.jon.shclient.network.UPDSender;
+import com.jon.shclient.tcp.IPUtils;
 
 import java.lang.ref.WeakReference;
 
-import static com.jon.shclient.network.UPDSender.EXCEPTION;
-import static com.jon.shclient.network.UPDSender.RECEIVED;
-import static com.jon.shclient.network.UPDSender.SENDED;
-import static com.jon.shclient.network.UPDSender.TIMEOUT;
+import static com.jon.shclient.udp.UPDSender.EXCEPTION;
+import static com.jon.shclient.udp.UPDSender.RECEIVED;
+import static com.jon.shclient.udp.UPDSender.SENDED;
+import static com.jon.shclient.udp.UPDSender.TIMEOUT;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link com.jon.shclient.UDPFragment#newInstance} factory method to
+ * Use the {@link UDPFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class UDPFragment extends Fragment {

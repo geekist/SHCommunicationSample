@@ -12,4 +12,12 @@
     <color name="link_title_background">#E3E3E3</color>
 
 
+    <color name="text_3">#333333</color>
+    <color name="text_6">#666666</color>
+    <color name="text_9">#999999</color>
+
+    <color name="text_empty">#bbbbbb</color>
+
+    <color name="scanner_text_hint">#7fcccccc</color><!-- 半透灰色 -->
+
 </resources>

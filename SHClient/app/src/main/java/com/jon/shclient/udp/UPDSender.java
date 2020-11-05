@@ -1,10 +1,11 @@
-package com.jon.shclient.network;
+package com.jon.shclient.udp;
 
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
 import com.jon.shclient.bean.BroadcastData;
+import com.jon.shclient.tcp.IPUtils;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;

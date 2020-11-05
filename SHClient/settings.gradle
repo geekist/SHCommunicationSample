@@ -1,2 +1,3 @@
+include ':blelib'
 include ':app'
 rootProject.name = "SHClient"

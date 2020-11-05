@@ -1,7 +1,6 @@
 package com.jon.shclient.mqtt;
 
 import android.annotation.SuppressLint;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -176,7 +175,7 @@ public class MqttFragment extends Fragment implements View.OnClickListener {
         textViewMessage.setMovementMethod(ScrollingMovementMethod.getInstance());
 
 
-        buttonConnect = layout.findViewById(R.id.button_connect);
+        buttonConnect = layout.findViewById(R.id.button_scan);
         buttonConnect.setOnClickListener(this);
         buttonSend = layout.findViewById(R.id.button_send);
         buttonSend.setOnClickListener(this);
@@ -194,7 +193,7 @@ public class MqttFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button_connect:
+            case R.id.button_scan:
                 connect();
                 break;
             case R.id.button_send:

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TcpFragment">
+    tools:context=".tcp.TcpFragment">
 
 
     <TextView
@@ -19,12 +19,11 @@
         android:background="@color/link_title_background"
         android:hint="@string/show_message"
 
-        android:textColor="@color/purple_500"
 
         android:inputType="textMultiLine"
         android:scrollbars="vertical"
         android:singleLine="false"
-        app:layout_constraintBottom_toTopOf="@id/button_connect"
+        app:layout_constraintBottom_toTopOf="@id/button_scan"
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +33,7 @@
 
 
     <Button
-        android:id="@+id/button_connect"
+        android:id="@+id/button_scan"
         android:layout_width="0dp"
         android:layout_height="@dimen/button_height"
         android:layout_marginStart="@dimen/margin_left_to_parent"
@@ -67,11 +66,11 @@
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
 
-        app:layout_constraintBaseline_toBaselineOf="@id/button_connect"
+        app:layout_constraintBaseline_toBaselineOf="@id/button_scan"
         app:layout_constraintEnd_toStartOf="@+id/button_disconnect"
 
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@id/button_connect"
+        app:layout_constraintStart_toEndOf="@id/button_scan"
 
         />
 
@@ -86,7 +85,7 @@
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
 
-        app:layout_constraintBaseline_toBaselineOf="@id/button_connect"
+        app:layout_constraintBaseline_toBaselineOf="@id/button_scan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@id/button_send" />

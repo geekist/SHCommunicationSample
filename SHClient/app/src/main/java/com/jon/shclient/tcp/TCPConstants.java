@@ -1,4 +1,4 @@
-package com.jon.shclient.network;
+package com.jon.shclient.tcp;
 
 public class TCPConstants {
 

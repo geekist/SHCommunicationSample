@@ -1,4 +1,4 @@
-package com.jon.shclient.network;
+package com.jon.shclient.tcp;
 
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -11,20 +11,20 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_CONNECTED;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_CONNECTFAILED;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_CONNECTING;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_DISCONNECTED;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_INVALIDPARAMETER;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_RECEIVED;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_RECEIVEDATA;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_RECEIVEFAILED;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_RECEIVING;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_SENDED;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_SENDFAILED;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_SENDING;
-import static com.jon.shclient.network.TCPConstants.MSG_SUBTHREAD_SEND;
-import static com.jon.shclient.network.TCPConstants.STATE_DISCONNECTED;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_CONNECTED;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_CONNECTFAILED;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_CONNECTING;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_DISCONNECTED;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_INVALIDPARAMETER;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_RECEIVED;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_RECEIVEDATA;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_RECEIVEFAILED;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_RECEIVING;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_SENDED;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_SENDFAILED;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_SENDING;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SUBTHREAD_SEND;
+import static com.jon.shclient.tcp.TCPConstants.STATE_DISCONNECTED;
 
 public class TCPClient {
     private final String TAG = "TcpClient3";

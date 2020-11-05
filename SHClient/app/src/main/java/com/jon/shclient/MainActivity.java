@@ -9,12 +9,15 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.jon.shclient.ble.BleFragment;
 import com.jon.shclient.mqtt.MqttFragment;
+import com.jon.shclient.tcp.TcpFragment;
+import com.jon.shclient.udp.UDPFragment;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private final int DEFAULT_FRAGMENT = 0;
+    private final int DEFAULT_FRAGMENT = 2;
     private int lastFragmentIndex = 0;//用于记录上个选择的Fragment
     private static final String LAST_FRAGMENT_INDEX = "last_fragment_index";
 
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     BleFragment bleFragment;
     MqttFragment mqttFragment;
     private ArrayList<Fragment> fragments = new ArrayList<>(4);
+
 
     private BottomNavigationView bottomNavigationView;
     private BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener;

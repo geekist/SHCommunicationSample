@@ -5,19 +5,91 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BleFragment">
+    tools:context=".ble.BleFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="316dp"
-        android:layout_height="82dp"
-        android:text="@string/hello_blank_fragment"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        tools:listitem="@layout/rv_ble_item"
+
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_left_to_parent"
+        android:layout_marginTop="@dimen/margin_top_to_parent"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        android:layout_marginEnd="@dimen/margin_right_to_parent"
+        app:layout_constraintBottom_toTopOf="@id/button_scan"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.134" />
+        app:layout_constraintVertical_weight="1"
 
+        />
+
+
+    <ImageView
+        android:id="@+id/img_loading"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:src="@mipmap/ic_loading"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/button_scan"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="@dimen/margin_left_to_parent"
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_marginEnd="@dimen/margin_right"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        android:text="@string/scan_ble"
+
+        android:textSize="14sp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toStartOf="@id/button_connect"
+        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+
+    <Button
+        android:id="@+id/button_connect"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginEnd="@dimen/margin_left_to_parent"
+        android:text="@string/connect_ble"
+
+        android:textSize="14sp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+
+        app:layout_constraintBaseline_toBaselineOf="@id/button_scan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/button_scan" />
+
+    <!--
+
+
+        app:layout_constraintBaseline_toBaselineOf="@id/button_connect"
+        app:layout_constraintStart_toEndOf="@id/button_connect"
+
+      app:layout_constraintEnd_toStartOf="@id/button_disconnect"
+
+            app:layout_constraintStart_toEndOf="@id/button_connect"
+
+            app:layout_constraintStart_toEndOf="@id/button_send"
+
+
+    -->
 </androidx.constraintlayout.widget.ConstraintLayout>

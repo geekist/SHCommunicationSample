@@ -1,4 +1,4 @@
-package com.jon.shclient;
+package com.jon.shclient.tcp;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -14,24 +14,24 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.jon.shclient.network.TCPClient;
+import com.jon.shclient.R;
 
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_CONNECTED;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_CONNECTFAILED;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_CONNECTING;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_DISCONNECTED;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_INVALIDPARAMETER;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_RECEIVED;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_RECEIVEDATA;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_RECEIVEFAILED;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_RECEIVING;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_SENDED;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_SENDFAILED;
-import static com.jon.shclient.network.TCPConstants.MSG_SOCKET_SENDING;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_CONNECTED;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_CONNECTFAILED;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_CONNECTING;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_DISCONNECTED;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_INVALIDPARAMETER;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_RECEIVED;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_RECEIVEDATA;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_RECEIVEFAILED;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_RECEIVING;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_SENDED;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_SENDFAILED;
+import static com.jon.shclient.tcp.TCPConstants.MSG_SOCKET_SENDING;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link com.jon.shclient.TcpFragment#newInstance} factory method to
+ * Use the {@link TcpFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class TcpFragment extends Fragment implements View.OnClickListener {
@@ -162,7 +162,7 @@ public class TcpFragment extends Fragment implements View.OnClickListener {
         editTextIP = layout.findViewById(R.id.editTextText_ip);
         editTextPort = layout.findViewById(R.id.editText_port);
         editTextMessage = layout.findViewById(R.id.editText_message);
-        buttonConnect = layout.findViewById(R.id.button_connect);
+        buttonConnect = layout.findViewById(R.id.button_scan);
         buttonConnect.setOnClickListener(this);
 
         buttonSend = layout.findViewById(R.id.button_send);
@@ -176,7 +176,7 @@ public class TcpFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button_connect:
+            case R.id.button_scan:
                 connect();
                 break;
             case R.id.button_send:

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TcpFragment">
+    tools:context=".tcp.TcpFragment">
 
     <TextView
         android:id="@+id/textView_message"
@@ -92,11 +92,11 @@
 
         app:layout_constraintVertical_weight="1"
         app:layout_constraintTop_toBottomOf="@+id/textView_port"
-        app:layout_constraintBottom_toTopOf="@+id/button_connect"
+        app:layout_constraintBottom_toTopOf="@+id/button_scan"
         android:layout_marginBottom="@dimen/margin_bottom_to_parent"
         />
     <Button
-        android:id="@+id/button_connect"
+        android:id="@+id/button_scan"
         android:layout_width="0dp"
         android:layout_height="@dimen/button_height"
         android:layout_marginStart="@dimen/margin_left_to_parent"
@@ -130,12 +130,12 @@
         android:paddingRight="2dp"
 
 
-        app:layout_constraintStart_toEndOf="@id/button_connect"
+        app:layout_constraintStart_toEndOf="@id/button_scan"
         app:layout_constraintEnd_toStartOf="@+id/button_disconnect"
         android:layout_marginEnd="@dimen/margin_right"
 
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintBaseline_toBaselineOf="@id/button_connect"
+        app:layout_constraintBaseline_toBaselineOf="@id/button_scan"
 
         />
 
@@ -152,7 +152,7 @@
         android:paddingRight="2dp"
 
         app:layout_constraintStart_toEndOf="@id/button_send"
-        app:layout_constraintBaseline_toBaselineOf="@id/button_connect"
+        app:layout_constraintBaseline_toBaselineOf="@id/button_scan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1" />
 
