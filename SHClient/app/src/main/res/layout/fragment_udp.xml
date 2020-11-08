@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/link_title_background"
+
     tools:context=".udp.UDPFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -15,7 +17,7 @@
         android:layout_marginStart="@dimen/margin_left_to_parent"
         android:layout_marginTop="@dimen/margin_top_to_parent"
         android:layout_marginEnd="@dimen/margin_right_to_parent"
-        android:background="@color/link_title_background"
+        android:background="@color/white"
         android:hint="@string/show_message"
 
         android:inputType="textMultiLine"
@@ -29,38 +31,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-<!--
-    <TextView
-        android:id="@+id/textView_ip"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/bottom_height"
-        android:layout_marginStart="@dimen/margin_left_to_parent"
-        android:layout_marginTop="@dimen/margin_top_to_parent"
-        android:text="@string/ip_adress"
-        app:layout_constraintBottom_toTopOf="@id/editText_message"
-        app:layout_constraintEnd_toStartOf="@+id/editText_ip"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView_display"
-        app:layout_constraintVertical_bias="0.5"
+    <!--
+        <TextView
+            android:id="@+id/textView_ip"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/bottom_height"
+            android:layout_marginStart="@dimen/margin_left_to_parent"
+            android:layout_marginTop="@dimen/margin_top_to_parent"
+            android:text="@string/ip_adress"
+            app:layout_constraintBottom_toTopOf="@id/editText_message"
+            app:layout_constraintEnd_toStartOf="@+id/editText_ip"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_display"
+            app:layout_constraintVertical_bias="0.5"
 
-        />
+            />
 
-    <EditText
-        android:id="@+id/editText_ip"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/bottom_height"
-        android:ems="4"
-        android:inputType="text"
-        android:text="@string/mock_ip"
-        app:layout_constraintBaseline_toBaselineOf="@id/textView_ip"
-        app:layout_constraintEnd_toStartOf="@+id/textView_port"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView_ip"
-        app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent=".5" />
+        <EditText
+            android:id="@+id/editText_ip"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/bottom_height"
+            android:ems="4"
+            android:inputType="text"
+            android:text="@string/mock_ip"
+            app:layout_constraintBaseline_toBaselineOf="@id/textView_ip"
+            app:layout_constraintEnd_toStartOf="@+id/textView_port"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView_ip"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent=".5" />
 
-    -->
+        -->
 
     <TextView
         android:id="@+id/textView_port"
@@ -82,6 +84,7 @@
         android:inputType="number"
         android:paddingRight="8dp"
         android:text="@string/mock_port"
+
         app:layout_constraintBaseline_toBaselineOf="@id/textView_port"
         app:layout_constraintStart_toEndOf="@+id/textView_port"
         android:layout_marginStart="@dimen/margin_left_to_parent"
@@ -95,12 +98,12 @@
         android:layout_marginStart="@dimen/margin_left_to_parent"
         android:layout_marginEnd="@dimen/margin_right_to_parent"
 
-        android:background="@color/link_title_background"
         android:ems="10"
         android:gravity="start"
         android:hint="@string/send_message"
         android:inputType="textNoSuggestions"
         android:minLines="2"
+        android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@id/button_send"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_default="percent"
@@ -114,20 +117,56 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/button_height"
         android:layout_marginStart="@dimen/margin_left_to_parent"
-        android:layout_marginTop="@dimen/margin_top_to_parent"
-        android:layout_marginEnd="@dimen/margin_right_to_parent"
-        android:layout_marginBottom="@dimen/margin_bottom_to_parent"
-        android:text="Send"
-
+        android:layout_marginTop="@dimen/margin_top"
+        android:text="@string/send_broadcast"
 
         android:textSize="14sp"
-        android:paddingLeft="2dp"
-        android:paddingRight="2dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editText_message" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin_left_to_parent"
+
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/margin_bottom_to_parent"
+        />
+    <!--
+        <Button
+            android:id="@+id/button_send"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/send_broadcast"
+
+            app:layout_constraintStart_toEndOf="@id/button_start"
+            app:layout_constraintEnd_toStartOf="@+id/button_stop"
+            android:layout_marginEnd="@dimen/margin_right"
+
+            android:textSize="14sp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_start"
+            />
+
+        <Button
+            android:id="@+id/button_stop"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginEnd="@dimen/margin_left_to_parent"
+            android:text="@string/stop_broadcast"
+
+            android:textSize="14sp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+
+            app:layout_constraintStart_toEndOf="@id/button_send"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1" />
+
+        -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

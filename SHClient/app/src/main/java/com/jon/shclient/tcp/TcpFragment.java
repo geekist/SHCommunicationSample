@@ -192,11 +192,9 @@ public class TcpFragment extends Fragment implements View.OnClickListener {
      * 设置IP和端口地址,连接或断开
      */
     private void connect() {
-     //   String ip = editTextIP.getText().toString();
-    //    int port = Integer.parseInt(editTextPort.getText().toString());
+        String ip = editTextIP.getText().toString();
+        int port = Integer.parseInt(editTextPort.getText().toString());
 
-       String ip = "192.168.124.4";
-       int port = 8080;
         tcpClient.setIP(ip);
         tcpClient.setPort(port);
         tcpClient.setHandler(handler);

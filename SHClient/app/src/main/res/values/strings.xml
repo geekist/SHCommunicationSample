@@ -21,6 +21,14 @@
     <string name="server_ip_adress">服务器IP：</string>
     <string name="server_port">服务器端口：</string>
 
+    <string name="start_server">启动服务</string>
+    <string name="send_data">发送数据</string>
+    <string name="stop_server">停止服务</string>
+
+    <string name="start_broadcast">打开接收</string>
+    <string name="send_broadcast">广播发送</string>
+    <string name="stop_broadcast">停止接收</string>
+
     <string name="connect_mqtt">连接MQTT</string>
     <string name="publish_mqtt">发布topic</string>
     <string name="subscribe_mqtt">订阅topic</string>
@@ -29,7 +37,6 @@
     <string name="stop_scan_ble">停止扫描</string>
 
     <string name="connect_ble">连接蓝牙</string>
-
 
     <string name="notifyTitle">提示</string>
     <string name="gpsNotifyMsg">当前手机扫描蓝牙需要打开定位功能。</string>

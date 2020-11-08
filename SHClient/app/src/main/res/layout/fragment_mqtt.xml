@@ -16,7 +16,9 @@
         android:layout_marginBottom="@dimen/margin_bottom"
 
         android:layout_marginEnd="@dimen/margin_right_to_parent"
-        android:background="@color/link_title_background"
+
+        android:background="@drawable/textview_border"
+
         android:hint="@string/show_message"
 
 

@@ -27,7 +27,7 @@ import static com.jon.shclient.tcp.TCPConstants.MSG_SUBTHREAD_SEND;
 import static com.jon.shclient.tcp.TCPConstants.STATE_DISCONNECTED;
 
 public class TCPClient {
-    private final String TAG = "TcpClient3";
+    private final String TAG = TCPClient.class.getSimpleName();
 
     private String strIp;
     private int port;
@@ -116,7 +116,7 @@ public class TCPClient {
         closeConnect();
     }
 
-    public void detory() {
+    public void destory() {
         if (mHandlerThread != null) {
             mHandlerThread.quit();
             mHandlerThread = null;

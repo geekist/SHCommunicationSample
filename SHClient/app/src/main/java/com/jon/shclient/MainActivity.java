@@ -1,7 +1,9 @@
 package com.jon.shclient;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     MqttFragment mqttFragment;
     private ArrayList<Fragment> fragments = new ArrayList<>(4);
 
-
     private BottomNavigationView bottomNavigationView;
     private BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener;
 
@@ -52,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         }
         buildFragmentList();
         setDefaultFragment(lastFragmentIndex);
-
     }
 
     @Override
@@ -170,5 +170,31 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle(title);
 
+    }
+
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            exit();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    private long lastBackPressTime = -1;
+
+    private void exit() {
+        long currentTime = System.currentTimeMillis();
+        if(lastBackPressTime == -1L || currentTime - lastBackPressTime >= 3000){
+            // 显示提示信息
+            Toast.makeText(this,"再按一次退出",Toast.LENGTH_LONG).show();            // 记录时间
+            lastBackPressTime = currentTime;
+        }else{
+            finish();
+            System.exit(0);
+        }
     }
 }

@@ -12,7 +12,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
+import com.jon.shserver.ble.BleFragment;
 import com.jon.shserver.mqtt.MqttFragment;
+import com.jon.shserver.tcp.TcpFragment;
+import com.jon.shserver.udp.UDPFragment;
 
 public class MainActivity extends AppCompatActivity {
     private final int DEFAULT_FRAGMENT = 0;
@@ -26,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String[] TAGS = {TCP, UDP, BLE, MQTT};
 
     private TcpFragment tcpFragment;
-    private UDPFragment UDPFragment;
+    private com.jon.shserver.udp.UDPFragment UDPFragment;
     BleFragment bleFragment;
     MqttFragment mqttFragment;
     private ArrayList<Fragment> fragments = new ArrayList<>(4);

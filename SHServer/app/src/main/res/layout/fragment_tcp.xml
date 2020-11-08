@@ -2,9 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/link_title_background"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TcpFragment">
+    tools:context=".tcp.TcpFragment">
 
     <TextView
         android:id="@+id/textView_message"
@@ -13,7 +15,7 @@
         android:layout_marginStart="@dimen/margin_left_to_parent"
         android:layout_marginTop="@dimen/margin_top_to_parent"
         android:layout_marginEnd="@dimen/margin_left_to_parent"
-        android:background="@color/link_title_background"
+        android:background="@color/white"
         android:hint="@string/show_message"
         android:inputType="textMultiLine"
         android:scrollbars="vertical"
@@ -67,7 +69,7 @@
         android:layout_height="@dimen/button_height"
         android:layout_marginStart="@dimen/margin_left_to_parent"
         android:ems="10"
-        android:hint="@string/mock_port"
+        android:text="@string/mock_port"
         android:inputType="number"
         app:layout_constraintBaseline_toBaselineOf="@id/textView_port"
         app:layout_constraintStart_toEndOf="@id/textView_port" />
@@ -83,6 +85,7 @@
         android:hint="@string/send_message"
         android:inputType="textNoSuggestions"
         android:minLines="2"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="@dimen/margin_left_to_parent"

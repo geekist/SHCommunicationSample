@@ -19,17 +19,20 @@ import com.jon.shclient.tcp.IPUtils;
 
 import java.lang.ref.WeakReference;
 
-import static com.jon.shclient.udp.UPDSender.EXCEPTION;
-import static com.jon.shclient.udp.UPDSender.RECEIVED;
-import static com.jon.shclient.udp.UPDSender.SENDED;
-import static com.jon.shclient.udp.UPDSender.TIMEOUT;
+
+import static com.jon.shclient.udp.UdpSender.STARTED;
+import static com.jon.shclient.udp.UdpSender.STOPPED;
+import static com.jon.shclient.udp.UdpSender.EXCEPTION;
+import static com.jon.shclient.udp.UdpSender.RECEIVED;
+import static com.jon.shclient.udp.UdpSender.SENDED;
+import static com.jon.shclient.udp.UdpSender.TIMEOUT;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link UDPFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class UDPFragment extends Fragment {
+public class UDPFragment extends Fragment implements View.OnClickListener{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,9 +49,14 @@ public class UDPFragment extends Fragment {
     EditText editTextMessage;
     Button buttonSend;
 
+    Button buttonStart;
+    Button buttonStop;
+
     public StringBuilder textMessage;
 
     MyHandler handler;
+
+    UdpSender sender;
 
     public UDPFragment() {
         // Required empty public constructor
@@ -93,20 +101,48 @@ public class UDPFragment extends Fragment {
         editTextPort = layout.findViewById(R.id.editText_port);
         editTextMessage = layout.findViewById(R.id.editText_message);
 
+//        buttonStart = layout.findViewById(R.id.button_start);
+//        buttonStart.setOnClickListener(this);
         buttonSend = layout.findViewById(R.id.button_send);
+        buttonSend.setOnClickListener(this);
+//        buttonStop = layout.findViewById(R.id.button_stop);
+//        buttonStop.setOnClickListener(this);
 
         textMessage = new StringBuilder();
 
         handler = new MyHandler(this);
 
-        buttonSend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendUDPMessage();
-            }
-        });
+        sender = UdpSender.getInstance();
+        sender.initialize(getContext(),handler,8900);
 
         return layout;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
+        sender.destory();
+        sender = null;
+    }
+
+    @Override
+    public void onClick(View v) {
+        int port = Integer.parseInt(editTextPort.getText().toString());
+
+        switch(v.getId()) {
+//            case R.id.button_start:
+//                //  sender.startListen(port);
+//                break;
+            case R.id.button_send:
+                sender.initialize(getContext(),handler,port);
+                sendUDPMessage();
+
+                break;
+//            case R.id.button_stop:
+//                sender.stopListen();
+//                break;
+        }
     }
 
     //Handler静态内部类
@@ -126,6 +162,14 @@ public class UDPFragment extends Fragment {
 
             if (fragment != null) {
                 switch (msg.what) {
+                    case STARTED:
+                        strData = "启动监听广播！\n";
+                        fragment.textMessage.append(strData);
+                        break;
+                    case STOPPED:
+                        strData = "停止监听广播！\n";
+                        fragment.textMessage.append(strData);
+                        break;
                     case SENDED:
                         strData = receivedString(fragment,msg);
                         fragment.textMessage.append(strData);
@@ -142,23 +186,23 @@ public class UDPFragment extends Fragment {
                         strData = receivedString(fragment,msg);
                         fragment.textMessage.append(strData);
                         break;
-
                 }
                 fragment.textViewMessage.setText(fragment.textMessage.toString());
             }
         }
     }
 
+
+
     private static String receivedString(Fragment fragment, Message msg) {
         BroadcastData broadcastData = (BroadcastData) msg.obj;
         String strMessage = "";
         switch (msg.what) {
+
             case SENDED:
                 try {
-                    String appendix = " ---from:" + IPUtils.getLocalIp(fragment.getContext());
-                    broadcastData.appendStrData(appendix);
                     strMessage = "\n[send:"
-                            + broadcastData.getPort()
+                            + IPUtils.getLocalIp(fragment.getContext())
                             + "]"
                             + " "
                             + broadcastData.getStrData()
@@ -168,12 +212,18 @@ public class UDPFragment extends Fragment {
                 }
                 break;
             case RECEIVED:
-                strMessage = "\n[receive:"
-                        + broadcastData.getPort()
-                        + "]"
-                        + " "
-                        + broadcastData.getStrData()
-                        + "\n";
+                String ip = broadcastData.getIp();
+                try {
+                    //  String broadcastIp = IPUtils.getBoardcastIp(fragment.getContext());
+                    // if (ip.equals(broadcastIp))
+                    strMessage = "\n[receive:" + ip
+                            + "]"
+                            + " "
+                            + broadcastData.getStrData()
+                            + "\n";
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
                 break;
             case TIMEOUT:
                 strMessage = "\n[send:"
@@ -215,7 +265,6 @@ public class UDPFragment extends Fragment {
         String message = editTextMessage.getText().toString();
         byte[] data = message.getBytes();
 
-        UPDSender sender = new UPDSender(getContext(), port, data, handler);
-        sender.sendData();
+        sender.sendData(port,data);
     }
 }

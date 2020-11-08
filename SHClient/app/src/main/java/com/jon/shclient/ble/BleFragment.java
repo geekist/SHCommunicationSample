@@ -60,7 +60,7 @@ public class BleFragment extends Fragment implements View.OnClickListener {
     private List<CData> dataList = new ArrayList<>();
 
     private Button buttonScan;
-    private Button buttonConnect;
+    //private Button buttonConnect;
     private ImageView imageViewLoading;
 
 
@@ -110,8 +110,8 @@ public class BleFragment extends Fragment implements View.OnClickListener {
         buttonScan = layout.findViewById(R.id.button_scan);
         buttonScan.setOnClickListener(this);
 
-        buttonConnect = layout.findViewById(R.id.button_connect);
-        buttonConnect.setOnClickListener(this);
+       // buttonConnect = layout.findViewById(R.id.button_connect);
+       // buttonConnect.setOnClickListener(this);
 
         imageViewLoading = layout.findViewById(R.id.img_loading);
 
